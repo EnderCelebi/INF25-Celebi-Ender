@@ -6,6 +6,74 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <!--
+    Pentru register:
+    -nume
+    -prenume
+    -email
+    -parola
+    -nr tel
+    -data nasterii
+    -dropdown an studii
+    -->
+
+    <form>
+        <h1>Register</h1>
+        <label for="name">Nume</label>
+        <input type="text" name="nume" id="name"/>
+
+        <div>
+            <label for="prenume">Prenume</label>
+            <input type="text" name="Prenume" id="prenume" placeholder="prenume"/>
+        </div>
+
+        <div>
+            <label for="email">E-mail</label>
+            <input type="email" name="E-mail" id="email" value="ceva@gmail.com"/>
+        </div>
+
+        <div>
+            <label for="parola">Parola</label>
+            <input type="password" name="password" id="password"/>
+        </div>
+
+        <div>
+            <label for="nrTelefon">Numar de telefon</label>
+            <input type="tel" pattern="[0-9]{7}" name="nrTelefon" id="nrTelefon"/>
+        </div>
+
+        <div>
+            <label for="dataNastere">Data nasterii</label>
+            <input type="date" name="dataNastere" id="dataNastere"/>
+        </div>
+        <div>
+            <label for="anStudiu">An studiu</label>
+            <select name="anStudiu" id="anStudiu">
+                <option value="1">An 1</option>
+                <option value="2">An 2</option>
+                <option value="3" selected>An 3</option>
+            </select>   
+        </div>
+
+        <div>
+            <label for="conditii">Accept conditiile</label>
+            <input type="checkbox" name="conditii" id="conditii" required/>
+        </div>
+
+        <div>
+            <div>
+                <label for="sec">Intrebare securitate: 1 + 1 = ?</label>
+                <input type="number" name="sec" min="0" max="10" id="sec"/>
+            </div>
+            <div>
+                <label for="refferal">Cod invitatie</label>
+                <input type="text" name="refferal" disabled value="reducere50" id="refferal"/>
+            </div>
+            <input type="reset" value="Reset"/>
+            <input type="submit" value="Register"/>
+        </div>
+
+        
+    </form>
 </body>
 </html>
