@@ -16,9 +16,8 @@
     -data nasterii
     -dropdown an studii
     -->
-
-    <form>
-        <h1>Register</h1>
+    <h1>Register</h1>
+    <form action="/register" method="post">
         <label for="name">Nume</label>
         <input type="text" name="nume" id="name"/>
 
@@ -74,6 +73,25 @@
         </div>
 
         
+    </form>
+
+    <form action="register">
+        <h1>Comanda</h1>
+        <label for="topping">Topping</label>
+        <select name="topping" id="topping" multiple>
+            <option value="1">Banane</option>
+            <option value="2">Afine</option>
+            <option value="3" selected>Ciocolata</option>
+        </select>  
+
+        <input type="radio" name="size" value="small">Small</input>
+        <input type="radio" name="size" value="medium">Medium</input>
+        
+        
+        <input type="reset" value="Reset"/>
+        <input type="submit" value="Submit"/>
+        
+
     </form>
 </body>
 </html>
