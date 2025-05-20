@@ -1,69 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <svg 
-        height="500"
-        width="400" 
-        xmlns="http://www.w3.org/2000/svg"
-        style="background-color: white;"
-    >
-        <!-- <line x1="20" y1="70" x2="200" y2="400" class="linie" stroke="black"/>
-        <line x1="20" y1="70" x2="200" y2="70" class="linie" stroke="black"/>
-        <line x1="200" y1="400" x2="200" y2="70" class="linie" stroke="black"/> -->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script src="index.js" defer></script>
+    </head>
+    <body>
+        <form>
+            <label for="parola">Parola noua</label>
+            <input id="parola" type="password"/>
+            <div>
+                <label for="parola">Repeta parola noua</label>
+                <input id="re-parola" type="password"/>
+            </div>
+            <span id="error" style="color:red"></span>
+            <div>
+                <button id="schimba" disabled>Schimba parola</button>
+            </div>
+        </form>
 
-        <!-- <circle cx="200" cy="200" r="20" fill="blue" stroke="black"></circle>
-        <ellipse cx="200" cy="300" rx="30" ry="20" stroke="white"></ellipse> -->
+        <div id="a" style="background-color: red;">
+            <button id="b">Propagare</button>
+        </div>
+
+        <input id="todo"/>
+        <button id="add">Adauga</button>     
+        <div id="notite">
+            
+        </div>
         
-        <!-- <rect x="100" y="100" height="100" width="100" fill="pink"></rect>
-        <rect x="10" y="100" height="50" width="50" fill="green"></rect> -->
 
-        <!-- <polygon stroke="black" 
-            points="100 100 
-                150 100 
-                150 150
-                100 150
-                50 125"
-                fill="white">
-        </polygon> -->
-
-        <!-- <path
-        fill="white" 
-        stroke="black" 
-        d="M 30 30
-        L 90 80
-        V 30
-        Z">
-        </path> -->
-
-        <!-- <path fill="white"
-            stroke="red"
-            d="m 30 30
-            l 60 50
-            v -50
-            z">
-        </path> -->
-        <g id="val">
-        <path 
-            stroke="red"
-            d="M 10 50
-            Q 25 25 40 50
-            t 30,0 30,0
-            ">
-        </path>
-        </g>
-
-        <use href="#val" x="100"></use>
-    </svg>
-
-    <style>
-        .linie{
-            stroke-width: 5px;
-        }
-    </style>
-</body>
+    </body>
 </html>
