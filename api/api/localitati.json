@@ -1,0 +1,26 @@
+[
+    {
+        "name": "București",
+        "lat": 44.4378258,
+        "lon": 26.0946376,
+        "print": true
+    },
+    {
+        "name": "Brăila",
+        "lat": 45.2407381,
+        "lon": 27.8642331,
+        "print": false
+    },
+    {
+        "name": "Brașov",
+        "lat": 45.6524485,
+        "lon": 25.5140629,
+        "print": true
+    },
+    {
+        "name": "Constanța",
+        "lat": 44.1668681,
+        "lon": 28.4648131,
+        "print": true
+    }
+]

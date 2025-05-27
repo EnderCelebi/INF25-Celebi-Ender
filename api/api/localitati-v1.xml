@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<db>
+    <localitate>
+        <name>București</name>
+        <lat>44.4378258</lat>
+        <lon>26.0946376</lon>
+        <print>true</print>
+    </localitate>
+    <localitate>
+        <name>Brăila</name>
+        <lat>45.2407381</lat>
+        <lon>27.8642331</lon>
+        <print>true</print>
+    </localitate>
+    <localitate>
+        <name>Brașov</name>
+        <lat>45.6524485</lat>
+        <lon>25.5140629</lon>
+        <print>false</print>
+    </localitate>
+    <localitate>
+        <name>Constanța</name>
+        <lat>44.1668681</lat>
+        <lon>28.4648131</lon>
+        <print>true</print>
+    </localitate>
+</db>

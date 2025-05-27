@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<db>
+    <localitate>
+        <name lat="44.4378258" lon="26.0946376" print="true">București</name>
+    </localitate>
+    <localitate>
+        <name lat="45.2407381" lon="27.8642331" print="true">Brăila</name>
+    </localitate>
+    <localitate>
+        <name lat="45.6524485" lon="25.5140629" print="false">Brașov</name>
+    </localitate>
+    <localitate>
+        <name lat="44.1668681" lon="28.4648131" print="true">Constanța</name>
+    </localitate>
+</db>
