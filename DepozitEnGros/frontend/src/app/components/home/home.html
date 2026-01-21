@@ -1,0 +1,53 @@
+<div class="home-wrapper">
+  
+  <div class="home-title">
+    Dashboard
+  </div>
+
+  <div class="dashboard-grid">
+
+    <div class="dashboard-card produse" (click)="goTo('produse')">
+      <h3>Produse</h3>
+      <span>{{ nrProduse }}</span>
+    </div>
+
+    <div class="dashboard-card comenzi" (click)="goTo('comenzi')">
+      <h3>Comenzi</h3>
+      <span>{{ nrComenzi }}</span>
+    </div>
+
+    <div class="dashboard-card facturi" (click)="goTo('facturi')">
+      <h3>Facturi</h3>
+      <span>{{ nrFacturi }}</span>
+    </div>
+
+    <div class="dashboard-card clienti" (click)="goTo('clienti')">
+      <h3>Clienti</h3>
+      <span>{{ nrClienti }}</span>
+    </div>
+
+  </div>
+
+  <div style="margin-top: 40px; width: 100%; max-width: 800px;">
+
+    <!-- Alerta stoc mic -->
+    <div
+      *ngIf="produseStocMic.length > 0"
+      style="background:#fff3cd; padding:15px; border-radius:8px; margin-bottom:15px;"
+    >
+      <strong>⚠️ Atentie:</strong>
+      {{ produseStocMic.length }} produse au stoc mic.
+    </div>
+
+    <!-- Alerta facturi neplatite -->
+    <div
+      *ngIf="facturiNeplatite.length > 0"
+      style="background:#f8d7da; padding:15px; border-radius:8px;"
+    >
+      <strong>❗ Atentie:</strong>
+      {{ facturiNeplatite.length }} facturi sunt neplatite.
+    </div>
+
+  </div>
+
+</div>

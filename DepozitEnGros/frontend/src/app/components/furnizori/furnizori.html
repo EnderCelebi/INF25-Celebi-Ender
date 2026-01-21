@@ -1,0 +1,78 @@
+<h2 class="furn-page-title">Furnizori</h2>
+
+<div class="furn-content">
+
+  <div>
+    <div class="furn-header-left">Lista furnizori</div>
+
+    <div class="furn-left">
+      <table class="furn-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nume</th>
+            <th>Telefon</th>
+            <th>Email</th>
+            <th>Actiuni</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let f of furnizori">
+            <td>{{ f.id_furnizor }}</td>
+            <td>{{ f.nume }}</td>
+            <td>{{ f.telefon }}</td>
+            <td>{{ f.email }}</td>
+            <td>
+              <button (click)="setEdit(f)">Edit</button>
+              <button (click)="stergeFurnizor(f.id_furnizor)">Sterge</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div>
+    <div class="furn-header-right">
+      {{ idEdit === null ? 'Adauga furnizor' : 'Editeaza furnizor' }}
+    </div>
+
+    <div class="furn-right">
+      <input
+        class="furn-input"
+        [(ngModel)]="numeNou"
+        placeholder="Nume furnizor"
+      />
+
+      <input
+        class="furn-input"
+        [(ngModel)]="telefonNou"
+        placeholder="Telefon"
+      />
+
+      <input
+        class="furn-input"
+        [(ngModel)]="emailNou"
+        placeholder="Email"
+      />
+
+      <button class="furn-btn" (click)="salveazaFurnizor()">
+        {{ idEdit === null ? 'Adauga' : 'Salveaza modificarile' }}
+      </button>
+
+      <button
+        *ngIf="idEdit !== null"
+        class="furn-btn cancel"
+        (click)="resetForm()"
+      >
+        Anuleaza
+      </button>
+
+      <div *ngIf="eroareForm" class="form-error">
+        {{ eroareForm }}
+      </div>
+
+    </div>
+  </div>
+
+</div>

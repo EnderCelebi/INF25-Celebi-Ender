@@ -1,0 +1,80 @@
+<h2 class="client-page-title">Clienti</h2>
+
+<div class="client-content">
+
+  <div>
+    <div class="client-header-left">Lista clienti</div>
+
+    <div class="client-left">
+      <table class="client-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nume</th>
+            <th>Telefon</th>
+            <th>Email</th>
+            <th>Actiuni</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let c of clienti">
+            <td>{{ c.id_client }}</td>
+            <td>{{ c.nume }}</td>
+            <td>{{ c.telefon }}</td>
+            <td>{{ c.email }}</td>
+            <td>
+              <button (click)="setEdit(c)">Edit</button>
+              <button (click)="stergeClient(c.id_client)">Sterge</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div>
+    <div class="client-header-right">
+      {{ idEdit === null ? 'Adauga client' : 'Editeaza client' }}
+    </div>
+
+    <div class="client-right">
+      <input
+        class="client-input"
+        [(ngModel)]="numeNou"
+        placeholder="Nume client"
+      />
+
+      <input
+        class="client-input"
+        [(ngModel)]="telefonNou"
+        placeholder="Telefon"
+      />
+
+      <input
+        class="client-input"
+        [(ngModel)]="emailNou"
+        placeholder="Email"
+      />
+
+      <button class="client-btn" (click)="salveazaClient()">
+        {{ idEdit === null ? 'Adauga' : 'Salveaza modificarile' }}
+      </button>
+
+      <button
+        *ngIf="idEdit !== null"
+        class="client-btn cancel"
+        (click)="resetForm()"
+      >
+        Anuleaza
+      </button>
+
+      <div *ngIf="eroareForm" class="form-error">
+        {{ eroareForm }}
+      </div>
+
+    </div>
+  </div>
+
+  
+
+</div>

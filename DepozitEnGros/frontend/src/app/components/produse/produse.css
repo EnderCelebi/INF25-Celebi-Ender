@@ -1,0 +1,112 @@
+.prod-page-title {
+  text-align: center;
+  font-size: 34px;
+  font-weight: 700;
+  margin: 10px 0 30px 0;
+}
+
+.prod-add-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+
+  background: rgba(255,255,255,0.95);
+  padding: 16px;
+  border-radius: 14px;
+  margin-bottom: 30px;
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.prod-input {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  min-width: 140px;
+}
+
+.prod-btn {
+  padding: 12px 20px;
+  border-radius: 16px;
+  font-weight: 600;
+  background: #1976d2;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.prod-btn:hover {
+  background: #155fa0;
+}
+
+.prod-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+  padding-bottom: 40px;
+}
+
+.prod-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  cursor:pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.prod-card-title {
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.prod-card-desc {
+  font-size: 14px;
+  color: #444;
+  text-align: center;
+  margin-bottom: 14px;
+}
+
+.prod-card-footer {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+}
+
+.prod-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.25);
+}
+
+/* Alerta stoc mic */
+.prod-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  background: #e53935;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 700;
+
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+
+.error-wrapper {
+  min-height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+

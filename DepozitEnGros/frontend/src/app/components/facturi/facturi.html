@@ -1,0 +1,92 @@
+<h2 class="fact-page-title">Facturi</h2>
+
+<div class="fact-content">
+
+  <div>
+    <div class="fact-header-left">Lista facturi</div>
+
+    <div class="fact-left">
+      <table class="fact-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Comanda</th>
+            <th>Total</th>
+            <th>TVA</th>
+            <th>Plata</th>
+            <th>Status</th>
+            <th>Actiuni</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let f of facturi">
+            <td>{{ f.id_factura }}</td>
+            <td>{{ f.id_comanda }}</td>
+            <td>{{ f.total_facturat }}</td>
+            <td>{{ f.tva_total }}</td>
+            <td>{{ f.modalitate_plata }}</td>
+            <td>{{ f.status_plata }}</td>
+            <td>
+              <button (click)="setEdit(f)">Edit</button>
+              <button (click)="stergeFactura(f.id_factura)">Sterge</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div>
+    <div class="fact-header-right">
+      {{ idEdit === null ? 'Adauga factura' : 'Editeaza factura' }}
+    </div>
+
+    <div class="fact-right">
+
+      <select class="fact-input" [(ngModel)]="id_comanda">
+        <option [ngValue]="null">Selecteaza comanda</option>
+        <option *ngFor="let c of comenzi" [ngValue]="c.id_comanda">
+          Comanda #{{ c.id_comanda }} — {{ c.client }}
+        </option>
+      </select>
+
+
+      <select class="fact-input" [(ngModel)]="modalitate_plata">
+        <option value="">Modalitate plata</option>
+        <option value="cash">Cash</option>
+        <option value="card">Card</option>
+      </select>
+
+      <select class="fact-input" [(ngModel)]="status_plata">
+        <option value="">Status plata</option>
+        <option value="platit">Platit</option>
+        <option value="neplatit">Neplatit</option>
+      </select>
+
+      <input
+        class="fact-input"
+        [(ngModel)]="observatii"
+        placeholder="Observatii"
+      />
+
+      <button class="fact-btn" (click)="salveazaFactura()">
+        {{ idEdit === null ? 'Adauga' : 'Salveaza modificarile' }}
+      </button>
+
+      <button
+        *ngIf="idEdit !== null"
+        class="fact-btn cancel"
+        (click)="resetForm()"
+      >
+        Anuleaza
+      </button>
+
+      <div *ngIf="eroareForm" class="form-error">
+        {{ eroareForm }}
+      </div>
+
+
+    </div>
+  </div>
+
+</div>

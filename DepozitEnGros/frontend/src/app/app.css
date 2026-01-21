@@ -1,0 +1,28 @@
+.container {
+  padding: 20px;
+  min-height: calc(100vh - 60px);
+}
+
+nav {
+  background-color: white;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav .nav-left a {
+  color: black;
+  text-decoration: none;
+  margin-right: 18px;
+  font-weight: bold;
+}
+
+nav .nav-left a:hover {
+  text-decoration: underline;
+}
+
+nav .nav-right {
+  color: black;
+  font-weight: bold;
+}

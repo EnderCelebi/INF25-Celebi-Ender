@@ -1,0 +1,159 @@
+/* ===============================
+   PAGINA CATEGORII
+   =============================== */
+
+/* titlu principal */
+.cat-page-title {
+  text-align: center;
+  font-size: 34px;
+  font-weight: 700;
+  margin: 10px 0 35px 0;
+  color: #1a1a1a;
+}
+
+.cat-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto 12px auto;
+}
+
+.cat-header-left,
+.cat-header-right {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 600;
+  padding-bottom: 8px;
+  border-bottom: 3px solid #1976d2;
+  color: #1a1a1a;
+}
+
+
+.cat-content {
+  display: flex;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
+.cat-left,
+.cat-right {
+  background: rgba(255, 255, 255, 0.92);
+  padding: 22px;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+
+  margin-left: auto;
+  margin-right: auto;  
+  width: 100%;
+  max-width: 520px;
+}
+
+
+.cat-left {
+  background: rgba(255, 255, 255, 0.92);
+  padding: 22px;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+
+  width: 100%;
+  max-width: 520px;
+
+  height: 420px;         
+  overflow-y: auto;       
+}
+
+
+.cat-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.cat-table th,
+.cat-table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.cat-table th {
+  background-color: #f5f7fa;
+  font-weight: 600;
+  padding: 12px;
+  border-bottom: 2px solid #ddd;
+}
+
+.cat-table td {
+  padding: 12px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+
+.cat-table tbody tr:hover {
+  background-color: #f0f4ff;
+}
+
+
+.cat-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cat-label {
+  width: 85%;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.cat-input {
+  width: 85%;
+  padding: 14px;
+  font-size: 16px;
+  margin-bottom: 18px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.cat-input:focus {
+  outline: none;
+  border-color: #1976d2;
+  box-shadow: 0 0 0 2px rgba(25,118,210,0.2);
+}
+
+
+.cat-btn,
+.cat-left button {
+  padding: 10px 20px;
+  border-radius: 16px;
+  font-weight: 600;
+  background: #1976d2;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.cat-btn:hover,
+.cat-left button:hover {
+  background: #155fa0;
+}
+
+
+@media (max-width: 900px) {
+  .cat-header,
+  .cat-content {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 95%;
+  }
+
+  .cat-label,
+  .cat-input {
+    width: 100%;
+  }
+}

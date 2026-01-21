@@ -1,0 +1,109 @@
+<h2 class="prod-page-title">Produse</h2>
+
+<div class="prod-add-bar">
+
+  <select class="prod-input" [(ngModel)]="idCategorie">
+    <option [ngValue]="null">Categorie</option>
+    <option *ngFor="let c of categorii" [ngValue]="c.id_categorie">
+      {{ c.nume }}
+    </option>
+  </select>
+
+  <select class="prod-input" [(ngModel)]="idFurnizor">
+    <option [ngValue]="null">Furnizor</option>
+    <option *ngFor="let f of furnizori" [ngValue]="f.id_furnizor">
+      {{ f.nume }}
+    </option>
+  </select>
+
+  <input class="prod-input" [(ngModel)]="nume" placeholder="Nume produs" />
+
+  <input class="prod-input" [(ngModel)]="descriere" placeholder="Descriere" />
+
+  <input
+    class="prod-input"
+    type="number"
+    [(ngModel)]="pretAchizitie"
+    placeholder="Pret achizitie"
+  />
+
+  <input
+    class="prod-input"
+    type="number"
+    [(ngModel)]="pretVanzare"
+    placeholder="Pret vanzare"
+  />
+
+  <input
+    class="prod-input"
+    type="number"
+    [(ngModel)]="stoc"
+    placeholder="Stoc"
+  />
+
+  <button
+    class="prod-btn"
+    *ngIf="editId === null"
+    (click)="adaugaProdus()"
+  >
+    Adaugă
+  </button>
+
+  <button
+    class="prod-btn"
+    *ngIf="editId !== null"
+    (click)="salveazaEditare()"
+  >
+    Actualizează
+  </button>
+
+  <button
+    class="prod-btn"
+    *ngIf="editId !== null"
+    (click)="stergeProdus(editId)"
+  >
+    Șterge
+  </button>
+
+  <button
+    class="prod-btn"
+    *ngIf="editId !== null"
+    (click)="resetForm()"
+  >
+    Cancel
+  </button>
+
+  <div class="error-wrapper">
+    <div *ngIf="eroareForm" class="form-error">
+      {{ eroareForm }}
+    </div>
+  </div>
+
+
+
+</div>
+
+<div class="prod-cards">
+
+  <div class="prod-card" *ngFor="let p of produse" (click)="selecteazaProdus(p)">
+    <span
+      class="prod-badge"
+      *ngIf="p.stoc !== null && p.stoc <= 10"
+    >
+      Stoc mic
+    </span>
+    <div class="prod-card-title">
+      {{ p.nume }}
+    </div>
+
+    <div class="prod-card-desc">
+      {{ p.descriere || 'Fara descriere' }}
+    </div>
+
+    <div class="prod-card-footer">
+      <span>Stoc: {{ p.stoc }}</span>
+      <span>{{ p.pret_vanzare }} lei</span>
+    </div>
+  </div>
+
+</div>

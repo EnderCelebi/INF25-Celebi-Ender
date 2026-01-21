@@ -1,0 +1,113 @@
+.cmd-title {
+  text-align: center;
+  font-size: 34px;
+  margin-bottom: 30px;
+}
+
+.cmd-top {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+}
+
+.cmd-left {
+  width: 55%;
+  height: 420px;              
+  overflow-y: auto;           
+  background: white;
+  padding: 20px;
+  border-radius: 14px;
+}
+
+
+.cmd-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.cmd-table th,
+.cmd-table td {
+  text-align: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.cmd-table tbody tr:hover {
+  background: #f0f4ff;
+}
+
+.cmd-right {
+  width: 35%;
+  height: 420px;
+  overflow-y: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 14px;
+}
+
+.cmd-prod {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.cmd-total {
+  text-align: right;
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 15px;
+}
+
+.cmd-send {
+  width: 100%;
+  margin-top: 15px;
+}
+
+.cmd-bottom {
+  margin-top: 30px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.cmd-input {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+.cmd-add {
+  padding: 12px 20px;
+}
+
+.cmd-left button,
+.cmd-right button,
+.cmd-bottom button {
+  padding: 10px 18px;
+  border-radius: 16px;
+  font-weight: 600;
+  background: #1976d2;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin: 4px;
+}
+
+.cmd-left button:hover,
+.cmd-right button:hover,
+.cmd-bottom button:hover {
+  background: #155fa0;
+}
+
+.cmd-remove {
+  padding: 6px 14px;
+  border-radius: 14px;
+  font-size: 14px;
+}
+
+.error-wrapper {
+  min-height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,102 @@
+<h2 class="cmd-title">Comenzi</h2>
+
+<div class="cmd-top">
+
+  <div class="cmd-left">
+    <table class="cmd-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Client</th>
+          <th>Data</th>
+          <th>Actiuni</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let c of comenzi">
+          <td>{{ c.id_comanda }}</td>
+          <td>{{ c.client }}</td>
+          <td>{{ c.data_comanda | date:'short' }}</td>
+          <td>
+            <button (click)="veziDetalii(c.id_comanda)">Detalii</button>
+            <button (click)="stergeComanda(c.id_comanda)">Sterge</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="cmd-right">
+    <h3 *ngIf="vizualizareComandaExistenta">
+      Detalii comanda (#{{ idComandaVizualizata }})
+    </h3>
+
+    <h3 *ngIf="!vizualizareComandaExistenta">
+      Cos de cumparaturi
+    </h3>
+
+
+    <div *ngFor="let p of produseCos; let i = index" class="cmd-prod">
+      <div>
+        <strong>{{ p.nume }}</strong><br>
+        {{ p.cantitate }} x {{ p.pret_unitar }}
+      </div>
+
+      <div>
+        {{ p.cantitate * p.pret_unitar | number:'1.2-2' }}
+        <button *ngIf="!vizualizareComandaExistenta" class="cmd-remove" (click)="eliminaProdus(i)">Elimina</button>
+      </div>
+    </div>
+
+
+    <div class="cmd-total">
+      Total: {{ totalCos | number:'1.2-2' }}
+    </div>
+
+    <div class="cmd-actions" *ngIf="!vizualizareComandaExistenta && produseCos.length > 0">
+      <button class="cmd-clear" (click)="golesteCos()">Goleste cos</button>
+      <button class="cmd-send" (click)="trimiteComanda()">Trimite comanda</button>
+    </div>
+
+
+  </div>
+
+</div>
+
+<div class="cmd-bottom">
+
+  <select [(ngModel)]="idClient" class="cmd-input" (change)="golesteCos()">
+    <option [ngValue]="null">Client</option>
+    <option *ngFor="let c of clienti" [ngValue]="c.id_client">
+      {{ c.nume }}
+    </option>
+  </select>
+
+  <select [(ngModel)]="idProdus" class="cmd-input">
+    <option [ngValue]="null">Produs</option>
+    <option *ngFor="let p of produse" [ngValue]="p.id_produs">
+      {{ p.nume }} (cant: {{ p.stoc }})
+    </option>
+  </select>
+
+  <input
+    class="cmd-input"
+    type="number"
+    min="1"
+    [(ngModel)]="cantitate"
+    placeholder="Cantitate"
+  />
+
+  <button class="cmd-add" (click)="adaugaInCos()">
+    Adauga în cos
+  </button>
+
+  <div class="error-wrapper">
+    <div *ngIf="eroareForm" class="form-error">
+      {{ eroareForm }}
+    </div>
+  </div>
+
+
+
+</div>

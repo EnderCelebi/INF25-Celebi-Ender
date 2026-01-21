@@ -1,0 +1,40 @@
+<h2 class="cat-page-title">Categorii</h2>
+
+<div class="cat-header">
+  <div class="cat-header-left">Lista categorii</div>
+  <div class="cat-header-right">Adauga categorie</div>
+</div>
+
+<div class="cat-content">
+  <div class="cat-left">
+    <table class="cat-table">
+      <thead>
+        <tr>
+          <th style="width: 90px;">ID</th>
+          <th>Nume categorie</th>
+          <th style="width: 140px;">Acțiune</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let c of categorii">
+          <td>{{ c.id_categorie }}</td>
+          <td>{{ c.nume }}</td>
+          <td>
+            <button class="danger" (click)="stergeCategorie(c.id_categorie)">Sterge</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="cat-right">
+    <label class="cat-label">Nume categorie</label>
+    <input class="cat-input" placeholder="Ex: Bauturi" [(ngModel)]="numeNou" />
+
+    <button class="primary cat-btn" (click)="adaugaCategorie()">Adauga</button>
+    <div *ngIf="eroareForm" class="form-error">
+      {{ eroareForm }}
+    </div>
+
+  </div>
+</div>
